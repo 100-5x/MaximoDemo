@@ -1,4 +1,4 @@
-# IBM Maximo Demo Using a Hit-and-Miss Engine
+# IBM Maximo Demo Using a Hit-and-Miss Engine for Oshkosh
 
 ---
 
@@ -79,10 +79,6 @@ An advanced asset management application suite that provides end users with an i
 ---
 
 ## C++ Naming Convention Guide
-
-**Project:** Oshkosh Maximo Demo  
-**Date:** July 2, 2025  
-**Author:** Ian Slater
 
 ### 1. General Principles
 
