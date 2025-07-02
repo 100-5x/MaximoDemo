@@ -4,7 +4,8 @@
 
 ## Objective
 To put together a demo that is as interactive as possible and without having any slides to go along with it.
-This demo should demonstrate how edge devices and sensors can take telemetry data, and feed that data into Maximo to fuel its insights and fleet management decisions.
+
+This demo should demonstrate how edge devices and sensors can take telemetry data, and feed that data into Maximo to fuel its insights and asset management decisions.
 
 ---
 
@@ -24,11 +25,11 @@ Deliverable by August 6th (Maximo World)
 ### IBM
 | Name            | Responsibility                  |
 | --------------- | ------------------------------- |
+| Scott Dial      | Project Sponsor                 |
 | Ian Slater      | Project Lead                    |
 | Satvika Alur    | Technical Specialist            |
 | Sapna Kwatra    | Maximo Integration Specialist   |
 | Livia Fingerson | Maximo Integration Assistant    |
-| Scott Dial      | Project Sponsor                 |
 
 ### CDW
 | Name            | Responsibility                  |
@@ -182,5 +183,26 @@ An advanced asset management application suite that provides end users with an i
 
 - Use `//` for inline comments and `/** */` for function/class documentation.  
 - Document all public functions and classes with purpose, parameters, and return values.
+
+---
+
+## Git Commit Conventions
+In general: follow https://www.conventionalcommits.org/en/v1.0.0/
+
+### Key Points
+- `fix`: patches a bug in codebase
+- `feat`: introduces a new feature
+- `BREAKING CHANGE` (footer), or `!`: breaking API change (can be part of a commit of any type)
+  - Examples:
+    ```
+    feat: allow provided config object to extend other configs
+
+    BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+    ```
+    ```
+    feat!: send an email to the customer when a product is shipped
+    ```
+- Other messages include `chore`, `refactor`, `docs`, `ci`, `build`, `test`, `style`
+- If applicable, specify scope using `()`, e.g. `feat(api):`
 
 ---
