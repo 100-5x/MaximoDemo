@@ -42,10 +42,12 @@ Deliverable by August 6th (Maximo World)
 
 ### Hit-and-Miss Engine
 A late 19th century stationary internal combustion engine that is controlled by a governor to only fire at a set speed.
+
 **Use:** This is where the sensors will be taking their readings from.
 
 ### ESP32
 Microcontroller with both WiFi and Bluetooth capabilities.
+
 **Use:** Control sensors and send their data to system.
 
 ### Sensors
@@ -54,18 +56,22 @@ Microcontroller with both WiFi and Bluetooth capabilities.
 - Infrared
 - Vibration
 - RPM (Hall Effect Sensor)
+
 **Use:** Take readings from engine.
 
 ### Custom Printed Circuit Board
 Designed using KiCad, printed and assembled by JLC PCB.
+
 **Use:** Connect the ESP32 to all of the sensors and power source.
 
 ### Custom 3D-Printed Box
 Custom 3D-Printed Box with a dovetail to attach on the back of the engine.
+
 **Use:** Encase the PCB and make the design compact and clean.
 
 ### Maximo Environment
 An advanced asset management application suite that provides end users with an intuitive and informative dashboard where they can easily track, inspect, and maintain their critical assets.
+
 **Use:** Ingest the data from the ESP32 and display on the Maximo user dashboard.
 
 
