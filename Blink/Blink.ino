@@ -1,21 +1,20 @@
 /*
- * https://circuits4you.com
- * ESP32 LED Blink Example
- * Board ESP23 DEVKIT V1
- * 
- * ON Board LED GPIO 2
- */
+   precompiler declarations.
+*/
 
 #define LED 4
 
+// GPIO Pin 4 is used.  1k resistor from pin to LED.  LED returns to gnd.
+
 void setup() {
-  // Set pin mode
   pinMode(LED,OUTPUT);
 }
 
 void loop() {
-  delay(500);
+  // Turn the light on
+  delay(750);
   digitalWrite(LED,HIGH);
-  delay(500);
+  // Turn light off
+  delay(750);
   digitalWrite(LED,LOW);
 }
