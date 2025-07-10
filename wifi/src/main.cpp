@@ -2,7 +2,7 @@
 #include <WiFiMulti.h> 
 
 #define WIFI_SSID "Ian" // name of wifi network to connect to
-#define WIFI_PASSWORD "somethingeasier1" // wifi network password
+#define WIFI_PASSWORD "ian's secret hotspot password" // wifi network password
 
 WiFiMulti wifiMulti; // creating instance
 
