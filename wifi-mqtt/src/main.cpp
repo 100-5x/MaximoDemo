@@ -89,6 +89,10 @@ const int SENSOR_PIN_VIBRATION = 25;
 // GPIO for DS18B20 Temperature Sensor
 const int SENSOR_PIN_TEMPERATURE = 4;
 
+// MQTT topic for publishing temperature data
+const char* mqttTopic = "iot-2/evt/temperature/fmt/json";
+
+
 WiFiClientSecure wifiClient;
 wifiClient.setCACert(root_ca);
 PubSubClient mqttClient(wifiClient);
@@ -187,7 +191,8 @@ void setup() {
   pinMode(SENSOR_PIN_VIBRATION, INPUT);       // Set the vibrationSensorPin as an input pin
   WiFi.setSleep(false);                       // disable wifi sleep mode
 
-  wifiClient.setInsecure();
+  // wifiClient.setInsecure(); # this disables verification
+  wifiClient.setCACert(root_ca); // use this to verify the server certificate
 
   Serial.setDebugOutput(true);                // Enable ESP32 WiFi debug logs
 
@@ -209,7 +214,17 @@ void loop() {
   mqttClient.loop();
 
   // Current functionality: takes temperature every time it detects a vibration
-  if (sensorReadVibration()) mqttPublishTemperature(sensorReadTemperature());
+  if (sensorReadVibration()){
+
+    // JSON payload for temperature reading
+    float temp = sensorReadTemperature();
+    String payload = String("{\"temp\";") + String(temp, 2) + String("}");
+
+    // publish the temperature reading to the MQTT broker
+    Serial.print("Publishing temperature: ");
+    Serial.println(payload);
+    mqttClient.publish(mqttTopic, payload.c_str());
+  }
 
   // Add a delay to avoid flooding the serial monitor
   delay(100);
